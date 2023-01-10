@@ -1,10 +1,2 @@
-
-title: Clemens Jarnach
-email: clemjar.science@gmail.com
-
 # Build settings
 theme: minima
-
-description: >- # this means to ignore newlines until "baseurl:"
-This is my website providing teaching materials, research updates, information about me and more.
-© Copyright 2022, Clemens Jarnach.
