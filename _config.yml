@@ -4,49 +4,9 @@ email: clemjar.science@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
 This is my website providing teaching materials, research updates, information about me and more.
   © Copyright 2022, Clemens Jarnach
-baseurl: "clemensjarnach.github.io" # the subpath of your site, e.g. /blog - use: clemensjarnach.github.io  (when using localhost:4000  baseurl:"" needs to be empty)
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-instagram_username: 
 github_username:  clemensjarnach
-
 
 # Build settings
 theme: minima
-plugins:
-  - jekyll-feed
-
-# Determine which pages should appear in the navigation area (e.g. only about and contact page)(you can also determine order):
-#header_pages:
-#  - about.markdown
-#  - contact.md
 
 
-# Allocate Frontmatter to images
-#defaults:
-#  - scope:
-#        path: "assets/img"
-#    values:
-#        image: true
-
-
-
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
