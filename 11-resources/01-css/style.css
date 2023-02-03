@@ -1,0 +1,62 @@
+/* This is a comment */
+
+* {margin:0;padding:0;}
+
+.content-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+/* The body is the main container for the entire page */
+body {
+    font-family: courier ,monospace; /* font-family sets the font for the text */
+    background-color: #FFCC00; /* background-color sets the background color of the page */
+    margin: 0; /* margin sets the space around the edge of the page */
+    padding: 0; /* padding sets the space around the content inside the page */
+}
+
+header {
+  position: fixed; /* make the header fixed */
+  top: 0; /* position it on the top */
+  left: 0; /* position it on the left */
+  width: 100%; /* take the full width of the page */
+  z-index: 999; /* set the z-index to be on top of other elements */
+}
+
+
+/* Headings are used to structure the content on the page */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold; /* font-weight makes the text bold */
+    margin: 0; /* margins are set to 0 so that the text is flush with the edge of the page */
+}
+
+/* The nav element is used to create a navigation menu */
+nav {
+    background-color: #333; /* background-color sets the background color of the nav element */
+    color: #fff; /* color sets the color of the text inside the nav element */
+    padding: 10px; /* padding sets the space around the content inside the nav element */
+    display: flex; /* flex makes sure that the navigation items are lined up horizontally */
+    justify-content: space-between; /* justify-content aligns the navigation items to the right */
+}
+
+/* The a element is used to create links */
+a {
+    color: #fff; /* color sets the color of the text inside the a element */
+    text-decoration: none; /* text-decoration removes the underline from the link */
+}
+
+/* The ul element is used to create a list */
+ul {
+    list-style-type: none; /* list-style-type removes the bullet points from the list */
+    margin: 0; /* margins are set to 0 so that the list is flush with the edge of the page */
+    padding: 0; /* padding is set to 0 so that the list items are flush with the edge of the list */
+    display: flex; /* flex makes sure that the list items are lined up horizontally */
+}
+
+/* The li element is used to create a list item */
+li {
+    margin: 0 10px; /* margins are set to 0 on the top and bottom, and 10px on the left and right */
+}
+
+/* ----------- */
