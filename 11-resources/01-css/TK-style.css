@@ -1144,7 +1144,6 @@ nav.nav_menu {    /* overall dimensions for the nav bar */
     align-items: center;
     padding: 0px 0px;
     max-width: 700px;
-    min-width: 600px;
 }
 
 .nav_header {    /* positioning the logo on the left of the nav bar */
