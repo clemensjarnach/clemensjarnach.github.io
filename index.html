@@ -9,11 +9,18 @@ clemens jarnach website;
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>clemens jarnach's website w/ research projects, CV, teaching materials, etc.</title>   <!-- website name displayed in browser -->
+    <title>clemens jarnach's portfolio with CV, research projects, and teaching materials, in sociology, politics, and computational social science.</title>   <!-- website name displayed in browser -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+    <meta name="keywords" content="data_science, Jarnach, clemens_jarnach, university_of_oxford, oxford, sociology, eu_referendum ,
+    social_science ,computational_social_science, machine_learning,
+    R_programming_language, Python_programming_language,
+    data_analysis, computational_sociology, predictive_modeling, artificial_intelligence, data_visualization, 
+    machine_learning_algorithms, data_science_tools
+    ,web_development,devtools,software_engineering">
+    <meta name="description" content="clemens jarnach's profile, research projects, CV, teaching materials, and blog for computational social science.">
     <link rel="stylesheet" type="text/css" href="./11-resources/01-css/TK-style.css">  <!-- link to CSS stylesheet-->
     <script src="./11-resources/04-js/scroll-button.js"></script>
-    <link rel="icon" href="./11-resources/02-images/elephant-icon.svg">  <!-- favicon code-->
-
+    <link rel="icon" href="./favicon.ico">  <!-- favicon code-->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YNV3HTCQNL"></script>
     <script>
@@ -29,7 +36,7 @@ clemens jarnach website;
   <div class="content-container">    <!-- container for the full website to manage margins -->
 
   <body>
-
+ 
 
 
 <!-- Code for Navigation Bar-->
@@ -43,8 +50,9 @@ clemens jarnach website;
       <div class="nav_menu_pages">
         <a href="index.html" class="nav_link ">home</a>
         <a href="cv.html" class="nav_link ">cv</a>
+        <a href="writings.html" class="nav_link">writings</a>
+        <a href="projects.html"  class="nav_link">projects</a>
         <a href="pong.html" class="nav_link">pong</a>
-
        </div>
     </nav>
 
@@ -60,14 +68,14 @@ clemens jarnach website;
     </div>
 
     <div class="intro-text">
-      <p>Hi, I'm Clemens, a Social Scientist,  PhD Student, &amp; Tutor in Sociology and Politics at the <a target="_blank" href="https://www.sociology.ox.ac.uk" > University of Oxford </a> </p>
+      <p>Hi, I'm Clemens, a Computational Social Scientist,  PhD Student, &amp; Tutor in Sociology and Politics at the <a target="_blank" href="https://www.sociology.ox.ac.uk" > University of Oxford </a> </p>
       <p>
         You can find my <a class="icon" target="_blank" rel="noopener noreferrer" href="./11-resources/05-files/2022-11-00-CV-CJ.pdf" title="cv"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="CV" class="svg-inline--fa fa-cv fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 400"><path fill="currentColor" d="M357.967 109.093L357.967 113.909L257.635 113.909L257.635 13.5774L262.451 13.5774C267.406 13.5737 272.163 15.52 275.695 18.9954L352.549 95.8492C355.921 99.448 357.85 104.163 357.967 109.093M282.718 198.589L282.718 204.809C282.718 210.018 278.496 214.241 273.287 214.241L141.652 214.241C136.443 214.241 132.221 210.018 132.221 204.809L132.221 198.589C132.221 193.38 136.443 189.158 141.652 189.158L273.287 189.158C278.496 189.158 282.718 193.38 282.718 198.589M282.718 254.975C282.718 260.184 278.496 264.406 273.287 264.406L141.652 264.406C139.043 264.412 136.548 263.336 134.761 261.435C132.974 259.534 132.054 256.977 132.221 254.373L132.221 248.153C132.221 242.944 136.443 238.721 141.652 238.721L273.287 238.721C278.496 238.721 282.718 242.944 282.718 248.153L282.718 254.975ZM282.718 305.141C282.718 310.35 278.496 314.572 273.287 314.572L141.652 314.572C136.443 314.572 132.221 310.35 132.221 305.141L132.221 298.92C132.221 293.712 136.443 289.489 141.652 289.489L273.287 289.489C278.496 289.489 282.718 293.712 282.718 298.92L282.718 305.141ZM232.552 120.129L232.552 13.5774L75.8346 13.5774C65.4172 13.5774 56.9722 22.0222 56.9722 32.4397L56.9722 396.041C56.9722 406.459 65.4172 414.904 75.8346 414.904L339.105 414.904C349.522 414.904 357.967 406.459 357.967 396.041L357.967 138.992L251.415 138.992C240.997 138.992 232.552 130.547 232.552 120.129"></path></svg> CV here</a>
 
 
-        <br> Or have a look on <a class="icon" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/clemensjarnach/" title="LinkedIn"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" class="svg-inline--fa fa-linkedin fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 450"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg> LinkedIn</a>
+        <br> Or have a look at my <a class="icon" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/clemensjarnach/" title="LinkedIn"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" class="svg-inline--fa fa-linkedin fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 450"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg> LinkedIn</a>
 
-        <br>For replication files, paper supplements, and teaching materials visit me on <a class="icon" target="_blank" rel="noopener noreferrer" href="https://github.com/clemensjarnach" title="github"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 500"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> Github</a>
+        <br>For replication files, paper supplements, and teaching materials, visit me on <a class="icon" target="_blank" rel="noopener noreferrer" href="https://github.com/clemensjarnach" title="github"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 500"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> Github</a>
 
         <br>You can read my blog posts on  <a class="icon" target="_blank" rel="noopener noreferrer" href="https://medium.com/@clemensjarnach" title="medium"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="medium" class="svg-inline--fa fa-medium fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 50 500 450"><path fill="currentColor" <path d="M129.151 156.751C104.604 165.248 84.7781 176.105 69.6723 189.323C54.5666 202.54 41.3491 220.478 30.0198 243.137C18.6906 265.795 12.5539 289.398 11.6098 313.945C10.6656 338.492 13.97 361.15 21.5229 381.921C29.0757 402.691 39.933 421.101 54.0946 437.151C68.2562 453.201 85.7222 466.418 106.493 476.803C127.263 487.188 149.449 493.325 173.052 495.213C196.655 497.102 218.841 494.741 239.612 488.133C260.382 481.524 280.208 470.195 299.09 454.145C317.973 438.095 332.606 419.213 342.991 397.498C353.377 375.784 359.041 352.653 359.985 328.106C360.929 303.56 357.625 280.901 350.072 260.131C342.519 239.36 331.662 220.95 317.5 204.9C303.339 188.851 285.873 175.633 265.103 165.248C244.332 154.863 222.618 148.726 199.959 146.838C177.301 144.95 153.698 148.254 129.151 156.751ZM435.042 165.248C421.824 173.745 410.967 185.546 402.47 200.652C393.973 215.758 387.364 232.752 382.644 251.634C377.923 270.516 375.563 293.647 375.563 321.026C375.563 348.405 377.923 371.535 382.644 390.417C387.364 409.3 393.973 426.294 402.47 441.399C410.967 456.505 420.408 467.834 430.793 475.387C441.179 482.94 451.564 487.188 461.949 488.133C472.334 489.077 481.303 487.661 488.856 483.884C496.409 480.108 503.49 474.915 510.098 468.306C516.707 461.698 523.316 452.257 529.925 439.983C536.533 427.71 542.198 413.076 546.919 396.082C551.639 379.088 554.471 358.318 555.415 333.771C556.36 309.224 555.415 288.454 552.583 271.46C549.751 254.466 543.614 235.584 534.173 214.814C524.732 194.043 515.291 179.41 505.85 170.913C496.409 162.416 485.552 157.223 473.278 155.335C461.005 153.447 448.259 156.751 435.042 165.248ZM587.987 176.577C584.211 181.298 579.962 193.099 575.242 211.981C570.521 230.863 567.689 262.963 566.745 308.28C565.801 353.597 567.689 389.001 572.409 414.492C577.13 439.983 581.851 456.033 586.571 462.642C591.292 469.25 595.068 472.555 597.9 472.555C600.733 472.555 604.509 469.25 609.23 462.642C613.95 456.033 618.199 444.704 621.975 428.654C625.751 412.604 628.112 380.504 629.056 332.355C630 284.205 628.112 248.329 623.391 224.727C618.671 201.124 613.95 186.018 609.23 179.41C604.509 172.801 600.733 169.496 597.9 169.496C595.068 169.496 591.764 171.857 587.987 176.577Z"></path></svg>  Medium</a>
 
@@ -81,9 +89,6 @@ clemens jarnach website;
         My methodology centers on the use of quantitative methods, including descriptive and inferential statistics, network analysis, and machine learning classifications. My doctoral thesis specifically explores the relationship between political engagement and digital media usage in the context of British politics, using network theory and a computational social science approach to examine political sociology puzzles.
         I see myself as a computational social scientist who takes sociological theory very seriously. 
       </p>
-       <p>
-         ... and I was once told my spirit animal would be an elephant.
-       </p>
 
     </div>
 
@@ -92,22 +97,68 @@ clemens jarnach website;
 <!-- List of Pages -->
     <div class="pages-container">
 
+      <h2 id="writings"><a class= "page-link" href="./writings.html">writings</a></h2>
+      <p>
+        Here is a list of my recent blog articles. Alternatively, you can also check out my blog posts on Medium <a class="icon" target="_blank" rel="noopener noreferrer" href="https://medium.com/@clemensjarnach">@clemensjarnach</a>.
+      </p>
+      <ul style="padding: 0%;">
+
+        <li class="blog-list">
+          <div>
+              <time>2023-02-10</time>
+          </div>
+          <span>
+              <a href="./02-articles/2023-03-10-article.html">Will Programmers be First to Lose Jobs to AI?</a>
+          </span>
+        </li>
+
+        <li class="blog-list">
+          <div>
+              <time>2023-02-02</time>
+          </div>
+          <span>
+              <a href="./02-articles/2023-03-02-article.html">The Lack of Women in Computer Science — A Hidden History</a>
+          </span>
+        </li>
+
+        <li class="blog-list">
+            <div>
+                <time>2023-02-23</time>
+            </div>
+            <span>
+                <a href="./02-articles/2023-02-23-article.html">Unveiling Anti-Muslim Bias in State-of-the-Art Language Models</a>
+            </span>
+        </li>
+
+        <li class="blog-list">
+            <div>
+                <time>2023-02-16</time>
+            </div>
+            <span>
+                <a href="./02-articles/2023-02-16-article.html">When Can I Finally Use AI Bing? </a>
+            </span>
+        </li>
+
+        <li class="blog-list">
+            <div>
+                <time>2023-02-02</time>
+            </div>
+            <span>
+                <a href="./02-articles/2023-02-11-article.html">The AI battle is on: ChatGPT vs. Google&#39s latest AI model</a>
+            </span>
+        </li>
+    </ul>
+
       <h2 id="projects"><a class= "page-link" href="./projects.html">projects</a></h2>
       <p>A list of projects I am currently working on </p>
 
-      <h2 id="teaching"><a class= "page-link" href="./teaching.html">teaching</a></h2>
+      <h2>teaching</h2>
       <p>You can access my current teaching materials such as slides and reading lists on my
          <a class="icon" target="_blank" rel="noopener noreferrer" href="https://clemens-uniofoxford.notion.site/clemens-uniofoxford/Clemens-Jarnach-OXFORD-363c3dc9695b4d7bb8c43f0decc25f30"> Notion.side</a>.
         This academic term, I am tutoring at the University of Oxford 
         1. <a class="icon" target="_blank" rel="noopener noreferrer" href="https://www.sociology.ox.ac.uk/sociological-theory">Sociological Theory</a>
         , and 2. <a class="icon" target="_blank" rel="noopener noreferrer" href="https://www.sociology.ox.ac.uk/political-sociology">Political Sociology</a> for PPE, History, and Politics undergraduates. 
         </p>
-        
-      <h2 id="writings"><a class="no-underline" target="_blank" rel="noopener noreferrer" href="https://medium.com/@clemensjarnach">writings</a></h2>
-      <p>
-        For now, you can look at my blog posts on <a class="icon" target="_blank" rel="noopener noreferrer" href="https://medium.com/@clemensjarnach">Medium @clemensjarnach</a>.
-        More links to my most recent publications will follow soon.
-      </p>
 
       <h2 id="thanks">thanks</h2>
       <p>
@@ -128,12 +179,11 @@ clemens jarnach website;
 <div class="hover-text-container">
   <button id="scroll-top-button">
     <svg >
-      <img src="./11-resources/02-images/elephant-icon-button.svg" alt="elephantius scientiae">
+      <img src="./11-resources/02-images/NASA-earth-view-2.png" alt="nasa-earth-button">
     </svg>
-    <span class="hovertext">Hi, I'm elephantius scientiae</span>
+    <span class="hovertext">Scroll to Top</span>
   </button>
 </div>  
-
 
 
 

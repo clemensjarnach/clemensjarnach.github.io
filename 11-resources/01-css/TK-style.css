@@ -9,7 +9,6 @@ Copyright © 2023 TK */
     box-sizing:border-box
 }
 
-
 /* Define Global Variables */
 /*Color Varibles  */
 :root {
@@ -18,7 +17,7 @@ Copyright © 2023 TK */
   --grey:  #ddd;
   --color1: #4d4d4d;
   --color2: #9e9e9e;
-  --coloraccent: #fba92c;    /*Color for acents, such as hover, underlines, links etc.   */
+  --coloraccent: #6666ff;    /*Color for accents, such as hover, underlines, links etc.   */
 
 }
 
@@ -41,9 +40,9 @@ body {
     font-display: swap;
     line-height: 1.725;
     width: 100%;
-    margin: 1;
+    margin: 0;
     margin-top: 30px;
-    margin-left: 5vw;  /* create a margin on the left side of your website that is 10% of the viewport width.*/
+    margin-left: 3vw;  /* create a margin on the left side of your website that is 10% of the viewport width.*/
     text-rendering: geometricPrecision;
     min-height: 100%;
     display: flex;
@@ -54,10 +53,36 @@ body {
 
 .content-container {
   max-width: 700px;
-  min-width: 600px;
+  min-width: 100px;
   margin: 0 auto;
   display: grid;
 grid-template-rows: 1fr auto;
+}
+
+@media only screen and (max-width: 1000px){       /* change width etc for desktop view */
+    .content-container {
+        max-width: 700px;
+        margin-top: 30px;
+        margin-left: 1vw;  /* create a margin on the left side of your website */
+        margin: 0 auto;
+        display: grid;
+      grid-template-rows: 1fr auto;
+      }
+      
+    
+}
+
+@media only screen and (max-width: 700px){       /* change width etc for iphone view */
+    .content-container {
+        max-width: 700px;
+        min-width: 100px;
+        margin-top: 30px;
+        margin-left: 1vw;  /* create a margin on the left side of your website */
+        margin-right: 1vw;
+        display: grid;
+      grid-template-rows: 1fr auto;
+      
+      }
 }
 
 .logo-container {         /* place the logo in the centre of page  */
@@ -71,9 +96,7 @@ grid-template-rows: 1fr auto;
   max-height: 40px;
 }
 
-.no-underline {
-    text-decoration: none;
-  }
+
 
 .title-container a {
   text-decoration: none;
@@ -90,6 +113,40 @@ grid-template-rows: 1fr auto;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.no-underline {
+    text-decoration: none;
+  }
+
+
+.blog-list {
+  display: flex;
+  grid-gap: 2rem;
+  margin: 0;
+  margin-bottom:10px ;
+  padding: 0;
+  list-style: none;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    line-height: 1.1;
+    text-align: justify;
+  }
+  
+.image-intext-container img{   
+    width: 60%;
+    height: auto;
+    /* centre the image */ 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 
 @media (prefers-color-scheme: light) {
@@ -236,6 +293,7 @@ a:hover {
 a.page-link {
   text-decoration: none;
 }
+
 
 
 article .series ul, article .tags ul {
@@ -1169,7 +1227,7 @@ a.nav_link:hover:before {
 
 
 
-#oxford-logo:hover {opacity: 0.7}  /* when overing over the button, the img will fade*/
+#oxford-logo:hover {opacity: 0.7}  /* when hovering over the button, the img will fade*/
 
 
 @media (max-width: 760px) {  /* if the window is smaller then 760px we move the nav bar to two rows */
@@ -1222,6 +1280,9 @@ a.nav_link:hover:before {
   opacity: 1;
 }
 
+
+
+  
 
 
 

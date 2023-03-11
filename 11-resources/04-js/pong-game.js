@@ -9,7 +9,7 @@
         
         // color variables 
         var paddleColor = "black";
-        var ballColor = "#fba92c";
+        var ballColor = "#6666ff";
 
 
         // ball variables
@@ -31,13 +31,21 @@
         var player2Score = 0;
         
         // function to draw the ball
+        // function drawBall() {
+        //     ctx.beginPath(); 
+        //     ctx.arc(ballX, ballY, ballRadius, 0, Math.PI*2);
+        //     ctx.fillStyle = ballColor;
+        //     ctx.fill();
+        //     ctx.closePath();
+        // }
         function drawBall() {
             ctx.beginPath();
-            ctx.arc(ballX, ballY, ballRadius, 0, Math.PI*2);
-            ctx.fillStyle = ballColor;
-            ctx.fill();
+            var ballImg = new Image();
+            ballImg.src = "./11-resources/02-images/favicon.ico"; // path to your favicon file
+            ctx.drawImage(ballImg, ballX - ballRadius, ballY - ballRadius, ballRadius * 2, ballRadius * 2);
             ctx.closePath();
-        }
+          }
+          
         
         // function to draw the paddles
         function drawPaddle1() {
@@ -133,7 +141,7 @@
             computerMovement();
             // display scores
             ctx.font = "16px Arial";
-            ctx.fillText("Player 1: " + player1Score, 8, 20);
+            ctx.fillText("You: " + player1Score, 8, 20);
             ctx.fillText("Computer: " + player2Score, canvas.width-100, 20);
         }
         
