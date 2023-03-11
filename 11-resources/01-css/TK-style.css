@@ -85,6 +85,13 @@ grid-template-rows: 1fr auto;
       }
 }
 
+@media only screen and (max-width: 700px) {
+    #scroll-top-button {
+        transform: scale(0.5); /* add this line to make the button 50% smaller */
+    }
+}
+
+
 .logo-container {         /* place the logo in the centre of page  */
   display: grid;
   place-items: left;
@@ -140,7 +147,7 @@ grid-template-rows: 1fr auto;
   }
   
 .image-intext-container img{   
-    width: 60%;
+    width: 100%;
     height: auto;
     /* centre the image */ 
     display: block;
@@ -1164,16 +1171,16 @@ a.link {
     align-items: center; /* This centers the child elements vertically */
     bottom: 80px;
     right: 40px;
-    background-color: currentColor;
+    background-color: rgba(255, 255, 255, 0); /* transparent. */
     padding: 0px 0px;
-    border-radius: 50%;
+    border-radius: 100%;
     cursor: pointer;
     border: none;
 }
 
 @media (prefers-color-scheme: light) {
     #scroll-top-button {
-        color: var(--white)
+        color: rgba(255, 255, 255, 0); /*  use the CSS rgba() function to make background color transparent. */
     }
 }
 
@@ -1282,7 +1289,4 @@ a.nav_link:hover:before {
 
 
 
-  
-
-
-
+ 
