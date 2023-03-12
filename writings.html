@@ -121,33 +121,35 @@
 </div>  
 
 
-<div id="apod-container" class="image-intext-container">
-  <img id="apod-image" src="" alt="">
-  <p id="apod-title"></p>
-  <p>Image Credit: NASA Picture of the Day</p>
-</div>
 
-<script>
-  // make a request to the APOD API
-  fetch('https://api.nasa.gov/planetary/apod?api_key=QLPP7ZpS9MwQiEL7MNs2OojrjLfDFaDeJxcaZmRP')
-    .then(response => response.json())
-    .then(data => {
-      // extract the relevant information from the API response
-      const imageUrl = data.url;
-      const imageTitle = data.title;
+<!-- NASA API: to display NASA Picture of the Day-->
+    <div id="apod-container" class="image-apod">
+      <img id="apod-image" src="" alt="">
+      <p id="apod-title"></p>
+      <p>Image Credit: NASA Picture of the Day</p>
+    </div>
+    <script> 
+    // javascript code to fetch the NASA Picture of the Day
+      // make a request to the APOD API
+      fetch('https://api.nasa.gov/planetary/apod?api_key=QLPP7ZpS9MwQiEL7MNs2OojrjLfDFaDeJxcaZmRP')
+        .then(response => response.json())
+        .then(data => {
+          // extract the relevant information from the API response
+          const imageUrl = data.url;
+          const imageTitle = data.title;
 
-      // update the HTML elements with the image and title
-      const apodImage = document.getElementById('apod-image');
-      const apodTitle = document.getElementById('apod-title');
-      apodImage.src = imageUrl;
-      apodImage.alt = imageTitle;
-      apodTitle.textContent = imageTitle;
-    })
-    .catch(error => {
-      console.error(error);
-    });
-</script>
-
+          // update the HTML elements with the image and title
+          const apodImage = document.getElementById('apod-image');
+          const apodTitle = document.getElementById('apod-title');
+          apodImage.src = imageUrl;
+          apodImage.alt = imageTitle;
+          apodTitle.textContent = imageTitle;
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    </script>
+<!-- END: NASA API: to display NASA Picture of the Day-->
 
 
 
