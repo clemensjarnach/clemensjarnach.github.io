@@ -91,6 +91,12 @@ grid-template-rows: 1fr auto;
     }
 }
 
+@media only screen and (max-width: 700px) {
+    #pong-game-page {
+        display: none;     /* hide the pong game on mobile devices */
+    }
+}
+ 
 
 .logo-container {         /* place the logo in the centre of page  */
   display: grid;
@@ -147,6 +153,15 @@ grid-template-rows: 1fr auto;
   }
   
 .image-intext-container img{   
+    width: 70%;
+    height: auto;
+    /* centre the image */ 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.image-apod img{   
     width: 100%;
     height: auto;
     /* centre the image */ 
@@ -1289,4 +1304,7 @@ a.nav_link:hover:before {
 
 
 
- 
+  
+
+
+
