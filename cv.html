@@ -20,6 +20,16 @@
       gtag('config', 'G-YNV3HTCQNL');
     </script>
 
+    <style>
+      @media only screen and (max-width: 700px) {
+        .pages-container iframe {
+          width: 100vw;
+          height: calc(100vw * 1.414); /* Set the aspect ratio of the PDF */
+  }
+}
+    </style>
+
+
   </head>
 
   <div class="content-container">    <!-- container for the full website to manage margins -->
@@ -49,7 +59,7 @@
 
 
 
-<!-- Content for Homepage Title & Intro  -->
+  <!-- Content for Homepage Title & Intro  -->
   <div class="title-container">
     <a href="index.html" class="home-link">
       <h1 id="clemens-jarnach">← clemens jarnach</h1>
@@ -59,25 +69,24 @@
 
 
 
-<!-- List of Pages -->
+  <!-- List of Pages -->
     <div class="pages-container">
-
-      <h2 id="projects">Curriculum Vitae <a class="no-underline" href="./11-resources/05-files/2022-11-00-CV-CJ.pdf" download> — PDF </a> </h2>
-      <iframe src="./11-resources/05-files/2022-11-00-CV-CJ.pdf" width="800px" height="2100px"></iframe>
-
+      <h1 id="projects">Curriculum Vitae <a class="no-underline" href="./11-resources/05-files/2022-11-00-CV-CJ.pdf" download> — View PDF </a> </h1>
+      <iframe src="./11-resources/05-files/2022-11-00-CV-CJ.pdf" width="100%" height="700px"></iframe>
+    </div>
 
   </body>
 
 
-<!-- content for "Scroll to Top Button"-->
-<div class="hover-text-container">
-  <button id="scroll-top-button">
-    <svg >
-      <img src="./11-resources/02-images/NASA-earth-view-2.png" alt="nasa-earth-button">
-    </svg>
-    <span class="hovertext">Scroll to Top</span>
-  </button>
-</div>  
+  <!-- content for "Scroll to Top Button"-->
+  <div class="hover-text-container">
+    <button id="scroll-top-button">
+      <svg >
+        <img src="./11-resources/02-images/NASA-earth-view-2.png" alt="nasa-earth-button">
+      </svg>
+      <span class="hovertext">Scroll to Top</span>
+    </button>
+  </div>  
 
   <!-- Footer-->
   <!-- <div class="nav-divider">  </div>  -->
