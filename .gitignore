@@ -23,3 +23,5 @@ po/*~
 # apikey file to hide apikey
 apikey.js 
 
+# To Do markdown list 
+todo.md
