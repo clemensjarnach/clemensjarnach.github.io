@@ -22,10 +22,32 @@ Modified: 2023-01-24
 
       gtag('config', 'G-YNV3HTCQNL');
     </script>
+    <style>  /* CSS for the Pong website */
+      .content-container-pong {
+        max-width: 500px;
+        min-width: 100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        text-align: justify;
+        }
+
+      @media only screen and (max-width: 1000px){       /* change width etc for desktop view */
+      .content-container-pong {
+        max-width: 500px;
+        margin-top: 30px;
+        margin-left: 1vw;  /* create a margin on the left side of your website */
+        margin: 0 auto;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        text-align: justify;
+        }
+      }
+    </style>
 
 </head>
 
-<div class="content-container">    <!-- container for the full website to manage margins -->
+<div class="content-container-pong">    <!-- container for the full website to manage margins -->
 
 <body>
 
@@ -63,6 +85,7 @@ Modified: 2023-01-24
     <a href="pong.html">
       <h1 id="clemens-jarnach">Globe Pong</h1>
     </a>
+    <p>Face off against the dangers threatening our planet!</p>
   </div>
 
 
@@ -84,9 +107,10 @@ Modified: 2023-01-24
 
 
 <div>
+  <p>Thank you for playing Globe Pong! The game is optimised for desktop use, and can be played by dragging the Pong paddle with your mouse. Please note that the game is not yet supported on mobile devices. I am working on making it available on all platforms soon. Enjoy playing on your desktop!</p>
   <p> Visit my
     <a class="icon" target="_blank" rel="noopener noreferrer" href="https://github.com/clemensjarnach"> GitHub page</a>
-    for the Pong Game JavaScript.
+    for the Pong Game JavaScript code.
   </p>
 </div>
 
