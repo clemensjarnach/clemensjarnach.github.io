@@ -1,0 +1,274 @@
+<!--
+Here are the steps I would follow to build a simple chess game for a static HTML website using HTML, CSS, and JavaScript:
+First, I would create a basic HTML structure for the chess game, including a chessboard with 64 squares arranged in an 8x8 grid.
+Next, I would use CSS to style the chessboard and its squares, including adding appropriate colors and borders to create a visually appealing and recognizable chessboard.
+I would also create separate CSS styles for each chess piece, including the king, queen, bishop, knight, rook, and pawn.
+To make the chess pieces movable, I would use JavaScript to add click event listeners to each piece. When a player clicks on a piece, it should become "selected" and highlighted.
+I would also use JavaScript to implement the basic rules of chess, including restricting the movement of each piece based on its type and position on the board.
+Additionally, I would implement functionality to handle turns, checkmate, and stalemate, as well as display messages to inform the players of the game's progress and outcome.
+Finally, I would test the game thoroughly to ensure that it works correctly and efficiently and is accessible to all users, including those with disabilities.
+Overall, building a simple chess game for a static HTML website requires a combination of HTML, CSS, and JavaScript skills, as well as an understanding of the rules and mechanics of chess. With careful planning and attention to detail, it is possible to create an engaging and entertaining game that users will enjoy playing.
+ --> 
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chess Game</title>
+
+    <style>
+
+        /* Chess piece styles */
+        /* White pieces */
+        .white-king {
+          font-size: 30px;
+          color: #ffffff;
+          /* add an image of a white king if desired */
+        
+        }
+        
+        .white-queen {
+          font-size: 30px;
+          color: #ffffff;
+          /* add an image of a white queen if desired */
+        }
+        
+        .white-bishop {
+          font-size: 30px;
+          color: #ffffff;
+          /* add an image of a white bishop if desired */
+        }
+        
+        .white-knight {
+          font-size: 30px;
+          color: #ffffff;
+          /* add an image of a white knight if desired */
+        }
+        
+        .white-rook {
+          font-size: 30px;
+          color: #ffffff;
+          /* add an image of a white rook if desired */
+        }
+        
+        .white-pawn {
+          font-size: 30px;
+          color: #ffffff;
+          /* add an image of a white pawn if desired */ 
+        }
+        
+        /* Black pieces */
+        .black-king {
+          font-size: 30px;
+          color: #ffffff;
+          /* add an image of a black king if desired */
+        }
+        
+        .black-queen {
+          font-size: 30px;
+          color: #ffffff;
+          /* add an image of a black queen if desired */
+        }
+        
+        .black-bishop {
+          font-size: 30px;
+          color: #030303;
+          /* add an image of a black bishop if desired */
+        }
+        
+        .black-knight {
+          font-size: 30px;
+          color: #030303;
+          /* add an image of a black knight if desired */
+        }
+        
+        .black-rook {
+          font-size: 30px;
+          color: #030303;
+          /* add an image of a black rook if desired */
+        }
+        
+        .black-pawn {
+          font-size: 30px;
+          color: #030303;
+          /* add an image of a black pawn if desired */
+        }
+        
+        
+        </style>
+
+    <style>
+      /* CSS styles for the chessboard and squares */
+  /* CSS styles for the chessboard and squares */
+     .chessboard {
+        width: 320px;
+        height: 320px;
+        display: flex;
+        flex-wrap: wrap;
+        border: 2px solid #333;
+        margin: 20px auto;
+      }
+      .square {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+        .white {
+        background-color: #f0d9b5;
+        }
+
+        .black {
+        background-color: #b58863;
+        color: #fff;
+        }
+
+        /* CSS styles for highlighting the selected square */
+        .selected {
+        background-color: #b8e9ff;
+        }
+
+        /* CSS styles for highlighting the possible moves */
+        .highlight {
+        background-color: #7dc16d;
+        }
+
+    </style>
+
+    <script>
+        const pieces = document.querySelectorAll('.piece');
+        // Add click event listeners to each piece
+        pieces.forEach(piece => {
+        piece.addEventListener('click', () => {
+        // Remove selected class from all pieces
+        pieces.forEach(piece => {
+        piece.classList.remove('selected');
+        });
+
+        // Add selected class to clicked piece
+        piece.classList.add('selected');
+        });
+        });
+
+    </script>
+  </head>
+  <body>
+    <div class="chessboard">
+      <!-- HTML code for the chessboard and squares -->
+      <!-- row 1! -->
+        <div class="square white">
+            <div class="piece white-rook">&#9814;</div>
+        </div>
+        <div class="square black">
+            <div class="piece white-knight">&#9816;</div>
+        </div>
+        <div class="square white">
+            <div class="piece white-bishop">&#9815;</div>
+        </div>
+        <div class="square black">
+            <div class="piece white-queen">&#9813;</div>
+        </div>
+        <div class="square white">
+            <div class="piece white-king">&#9812;</div>
+        </div>
+        <div class="square black">
+            <div class="piece white-bishop">&#9815;</div>
+        </div>
+        <div class="square white">
+            <div class="piece white-knight">&#9816;</div>
+        </div>
+        <div class="square black">
+            <div class="piece white-rook">&#9814;</div>
+        </div>
+        <!-- row 2: -->
+        <div class="square black">
+            <div class="piece white-pawn">&#9817;</div>
+        </div>
+        <div class="square white">
+            <div class="piece white-pawn">&#9817;</div>
+        </div>
+        <div class="square black">
+            <div class="piece white-pawn">&#9817;</div>
+        </div>
+        <div class="square white">
+            <div class="piece white-pawn">&#9817;</div>
+        </div>
+        <div class="square black">
+            <div class="piece white-pawn">&#9817;</div>
+        </div>
+        <div class="square white">
+            <div class="piece white-pawn">&#9817;</div>
+        </div>
+        <div class="square black">
+            <div class="piece white-pawn">&#9817;</div>
+        </div>
+        <div class="square white">
+            <div class="piece white-pawn">&#9817;</div>
+        </div>
+        <!-- row 3: -->
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <!-- row 4: -->
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <!-- row 5: -->
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <!-- row 6: -->
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <!-- row 7: -->
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <!-- row 8: -->
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+
