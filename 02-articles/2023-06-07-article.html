@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rounding Numbers: Are you doing it wrong?</title>   <!-- website name displayed in browser -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+    <meta name="keywords" content="data_science, Jarnach, clemens_jarnach, clemens-jarnach, markdown, R, Obsidian, HTML, LaTeX, Rprogramming">
+    <meta name="description" content="Rounding Numbers: Are you doing it wrong?">
+    <link rel="stylesheet" type="text/css" href="../11-resources/01-css/TK-style.css">  <!-- link to CSS stylesheet-->
+    <script src="../11-resources/04-js/scroll-button.js"></script>
+    <link rel="icon" href="../favicon.ico">  <!-- favicon code-->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YNV3HTCQNL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YNV3HTCQNL');
+    </script>
+
+  </head>
+
+ 
+<div class="content-container">    
+
+ <!-- DON'T CHANGE CODE ABOVE THIS LINE -->   
+<body>
+
+    <!-- Code for Navigation Bar-->
+    <nav class="nav_menu">
+      <div class="nav_header">
+        <a href="../index.html">
+          <!-- <img id="oxford-logo" src="./11-resources/02-images/wappen.png" alt="oxford-logo" width="50px"> -->
+          <img id="oxford-logo" src="../11-resources/02-images/oxford-logo-grey.png" alt="oxford-logo" width="50px">
+        </a>
+      </div>
+      <div class="nav_menu_pages">
+        <a href="../index.html" class="nav_link ">home</a>
+        <a href="../cv.html" class="nav_link ">cv</a>
+        <a href="../writings.html" class="nav_link">writings</a>
+        <a href="../projects.html"  class="nav_link">projects</a>
+        <a href="../pong.html" class="nav_link">pong</a>
+       </div>
+    </nav>
+
+
+
+
+  <!-- Content for Homepage Title & Intro  -->
+  <div class="title-container">
+    <a href="../writings.html" class="home-link">
+      <h1 id="clemens-jarnach">← writings</h1>
+    </a>
+  </div>
+
+
+
+    <div id="__next" data-reactroot="">
+        <div class="content">
+            <article class="post" itemscope="" itemType="http://schema.org/BlogPosting">
+                <header>
+                    <!-- ADD Title here  -->
+                    <h1 class="css-lf9blt">Rounding Numbers: Are you doing it wrong?</h1>
+                    <div style="margin-top:6px">
+                        <span class="author" itemProp="author" itemscope="">
+                            <!-- ADD Author  -->
+                            <span itemProp="name" style="font-size:0.85rem">Clemens Jarnach</span>
+                        </span>
+                        <div style="display:inline;margin-left:8px;margin-right:8px;font-size:0.85rem">
+                            <!-- ADD Timestamp -->
+                            <time dateTime="2023-02-02T00:00:00.000Z" itemProp="datePublished">2023-06-07</time>
+                        </div>
+
+                        <div><span class="author" itemProp="author" itemscope="">
+                          <!-- ADD Publication  -->
+                      
+                        </span></div>
+
+                        <div>
+                            <div style="font-size:0.85rem;display:inline">
+                                <!-- ADD Tags  -->
+                                <a style="margin-right:8px;display:inline-block" href="/tags/javascript">#Python</a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <style data-emotion="css p4z7j6">
+                .css-p4z7j6 {
+                    margin-top: 2em;
+                    margin-bottom: 2em;
+                    text-align: center;
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-flex-direction: column;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                    gap: 12px;
+                }
+                </style>
+
+                <!-- ADD Image Here -->
+                <div class="css-p4z7j6">
+                  <span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%">
+                      <img class="image" draggable="false" src="https://miro.medium.com/v2/resize:fit:720/0*mh_nDoLEj5vESZkz" alt="Photo by Myles Bloomfield on Unsplash">
+                  </span>
+                  <span style="font-size:12px">
+                      Image by<!-- -->
+                      <a href="https://unsplash.com/@loomydoons?utm_source=medium&utm_medium=referral" style="text-decoration:none" target="_blank" rel="noreferrer">Myles Bloomfield on Unsplash</a>
+                  </span>
+              </div>
+
+                 <!-- ADD Text Here -->
+                <div>
+                    <div class="css-1jx29eu">
+                      <h2 class="subtitle">Navigating Rounding Bias in Computer Science: Choosing the Optimal Rounding Method for Your Needs</h2>
+                      <p>Rounding numbers is a common practice that helps us simplify and make sense of numerical values. However, have you ever considered the potential bias introduced by traditional rounding methods? In this blog post, we will explore the concept of rounding bias and delve into Python 3's approach, known as “round half to even” or “banker's rounding,” which seeks to address this bias.</p> 
+                       
+                      <p>Rounding numbers is not as straightforward as it may seem. The traditional approach most of us are familiar with involves rounding up, where any fractional part greater than or equal to 0.5 is rounded up to the next whole number. While this method may seem intuitive, it introduces a bias towards higher values, potentially leading to inaccuracies and skewed results in certain scenarios. </p>
+
+                      <p>Consider a situation where you are tasked with calculating the average income of a group of individuals. If you always round up when dealing with decimal values, you may inadvertently inflate the average income, giving a distorted representation of the actual data. Rounding bias can have far-reaching consequences in various applications, from financial forecasting to scientific research.</p>
+
+                      <h3>Rounding numbers in computing</h3>
+                      <p>Another important application of rounding numbers arises from the fact that computers cannot precisely represent all real numbers. Think about it — we consider computers to be incredibly powerful and more capable of difficult calculations than humans, yet we often forget their limitations, and most computers use a finite representation system called floating-point arithmetic, which can only approximate real numbers within a limited range and precision. Humans have the ability to comprehend and reason about real numbers in a more abstract and intuitive manner compared to computers. We can perform mental calculations, estimate values, and compare real numbers based on our innate sense of quantity.
+                      Floating-point arithmetic is a numerical method used to represent real numbers with an approximation, using an integer called the significand, which has a fixed precision. This format allows a wide range of numbers to be displayed, but has limitations in terms of precision.</p>
+                      <p>Here is an example: let's consider the number π (pi), which is an irrational number, which means it has an infinite number of decimal places and cannot be expressed as a finite fraction or a terminating decimal. Thus the number π (pi) cannot be represented exactly on a computer with finite precision. Computers use a finite number of bits to store and manipulate numbers, which means that they can only represent an approximation of π. When representing π in a computer, rounding or truncation is necessary to limit the number of decimal places or bits used to store the approximation. This introduces some degree of error, as the true value of π cannot be fully captured. The number of decimal places or bits used to represent π determines the level of accuracy in the approximation.</p>
+                      <p>Ok, let's illustrate: the binary single-precision (32-bit) floating-point representation where p = 24, indicating that the significand consists of a sequence of 24 bits; you can think of p = 24 as saying: I want the number with a `precision` of 24 bits. E.g. look at the first 33 bits of the number π: 11001001000011111101101010100010001</p>
+                      <p>You can get this output in Python by converting the decimal representation of π into a binary string:</p>
+                      <pre><code># Python
+        import math
+
+        pi = math.pi
+        print(pi) 
+        > 3.141592653589793
+
+        binary_pi = format(int(pi * (2**33)), '033b')
+        print(binary_pi)
+        > 11001001000011111101101010100010001
+                        </code></pre>
+
+                      <p>You multiply π by 2 raised to the power of 33 to scale it up and convert it to an integer. Then, using the <code>format()</code> function, we convert the integer into a binary string with a width of 33 bits, indicated by the <code>033b</code> format specifier.</p>
+
+                      <p>Let's summarise everything so far. Due to the finite number of bits available, there are some real numbers that cannot be accurately represented in binary floating-point format. For example, numbers that have infinitely repeating decimal expansions, such as 1/3 (0.3333…), cannot be represented exactly. The computer can only store an approximation of these numbers. As a result, computations involving real numbers can sometimes suffer from round-off errors and precision limitations. It's important to be aware of these limitations when performing numerical calculations and consider appropriate techniques, such as using higher precision libraries or implementing error analysis and mitigation strategies, when necessary. In the following sections, we will explore an alternative approach to the most common rounding method.</p>
+
+                      <h3>Round Half to Even (Banker's Rounding)</h3>
+                      <p>“Round to Even”, also called “Banker’s Rounding” method is an approach that aims to mitigate the bias introduced by always rounding up, providing a fairer and more accurate representation of the data. And this is also the method Python 3’s <code>round()</code> function uses. So let’s see the rationale behind this method, its advantages, and how it handles cases where the number to be rounded falls exactly between two integers.</p>
+                      <p>Python 3 introduces an innovative approach to rounding called “round half to even” or “banker’s rounding.” This method aims to address the bias introduced by always rounding up and provides a more balanced and statistically sound approach to rounding numbers.</p>
+                      <p>The rationale behind “round half to even” is to minimize the overall rounding error and maintain fairness in rounding. Unlike always rounding up, this method considers the digits following the rounding position and rounds to the nearest even number when the fractional part is exactly 0.5. This approach ensures that half of the numbers are rounded up, while the other half is rounded down, resulting in a more balanced distribution. This choice helps maintain statistical fairness and minimizes the bias introduced by always rounding up.</p>
+                      <p>To better understand Python 3’s rounding behaviour, let’s consider some code examples. In traditional rounding, the number 3.5 would be rounded up to 4, as it exceeds the threshold of 0.5. However, in Python 3’s “round half to even” method, the number 3.5 is rounded down to 3 since both 3 and 4 are equidistant from it, and the rule favours rounding to the nearest even number. Here’s an example demonstrating Python 3’s rounding method:</p>
+                     
+                      <pre><code># Python
+        # Rounding using Python 3's "round half to even" method
+        num1 = 3.5
+        num2 = 4.5
+
+        rounded1 = round(num1)
+        rounded2 = round(num2)
+
+        print(rounded1)  # Output: 4
+        print(rounded2)  # Output: 4
+
+        > 4
+        > 4
+                        </code></pre>
+
+                      <p>In this example, both 3.5 and 4.5 are rounded down to 4 according to Python 3’s rounding rules. This behaviour ensures a balanced distribution of rounding results, reducing bias and maintaining statistical accuracy. Now, let’s compare this with the traditional rounding method:</p>
+
+                      <pre><code># Python
+        # Traditional rounding
+        import math
+
+        num1 = 3.5
+        num2 = 4.5
+
+        rounded1 = math.ceil(num1)
+        rounded2 = math.ceil(num2)
+
+        print(rounded1)  # Output: 4
+        print(rounded2)  # Output: 5
+
+        >4
+        >5
+                        </code></pre>
+
+
+                      <p>In the traditional rounding approach, the number 3.5 is rounded up to 4, while 4.5 is rounded up to 5. This highlights the bias introduced by always rounding up and the difference in behaviour compared to Python 3’s “round half to even” method. By adopting Python 3’s rounding approach, we can mitigate bias, maintain statistical fairness, and achieve more accurate results in rounding calculations.</p>
+                      <p>Banker’s rounding plays a crucial role in statistical calculations and data aggregation. When dealing with large datasets, rounding bias can have a significant impact on the summary statistics and overall analysis. By employing banker’s rounding, we can ensure fairness in aggregating data and avoid skewed results. For instance, when calculating the mean or average of a dataset, banker’s rounding minimizes the distortion caused by rounding bias, resulting in a more representative and reliable estimate. However, it is important to note that banker’s rounding may not be suitable for every situation. In certain contexts, alternative rounding methods may be more appropriate. For example, when dealing with financial transactions or pricing, rounding methods that always round up may align better with industry standards or legal requirements. Similarly, specific analytical techniques or mathematical models may necessitate the use of alternative rounding methods tailored to their unique requirements.</p>
+
+                      <h3>The “Round Randomly” Method</h3>
+                      <p>In addition to banker’s rounding, another alternative rounding method worth considering is the “round randomly” approach. As the name suggests, this method involves rounding numbers randomly when they fall exactly between two 
+                      <ul>
+                        <li>
+                          <strong>Pros</strong>
+                          <ul>
+                            <li>
+                              Balanced Distribution: Similar to banker’s rounding, the “round randomly” method achieves a balanced distribution of rounded values. It avoids the systematic bias introduced by always rounding up and provides a fair representation of the data.
+                            </li>
+                            <li>
+                              Statistical Neutrality: By rounding numbers randomly, this method does not favour rounding up or down, ensuring statistical neutrality in calculations and data analysis.
+                            </li>
+                            <li>
+                              Minimized Impact of Bias: Rounding numbers randomly can help mitigate the potential impact of rounding bias and its consequences on various calculations.
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>Cons</strong>
+                          <ul>
+                            <li>
+                              Lack of Determinism: The random nature of this method means that the rounding results will vary each time the calculation is performed. This lack of determinism can make it challenging to replicate and verify results consistently.
+                            </li>
+                            <li>
+                              Unpredictability: Rounding numbers randomly can introduce unpredictability into calculations, making it harder to anticipate and understand the rounding outcomes.
+                            </li>
+                            <li>
+                              Potential Loss of Precision: In some cases, rounding numbers randomly may lead to a loss of precision compared to other rounding methods. This can affect the accuracy of calculations, particularly when high precision is required.
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+
+                      <p>In Python, we can implement the “round randomly” method by utilizing the random module. The <code>random.uniform(a,b)</code>  function generates a random floating-point number between a and b. We can round our original number by adding a random offset within the range [-0.5, 0.5] to introduce randomness. Here’s an example of implementing the “round randomly” method in Python:</p>
+
+                      <pre><code># Python
+        import random
+
+        def round_randomly(number):
+            return round(number + random.uniform(-0.5, 0.5))
+
+        # Example usage
+        num = 3.5
+        rounded = round_randomly(num)
+
+        print(rounded)  # Output: Either 3 or 4 (randomly rounded)
+                                        </code></pre>
+                      <p>Each time the function is called, it will generate a random offset within the range [-0.5, 0.5] and add it to the number, resulting in a rounded value that can be either 3 or 4. By understanding the pros and cons of both “banker’s rounding” and the “round randomly” method, we can choose the most appropriate rounding approach for our specific needs, considering factors such as fairness, accuracy, and the nature of the data being rounded.</p>
+
+                      <h3>List of Python functions for rounding numbers</h3>
+
+                      <ol>
+                        <li>
+                          <code>round(x, ndigits=0)</code>: Rounds the value of x to the specified number of decimal places (ndigits). If ndigits is not provided, it defaults to 0, which rounds to the nearest integer. <code>round(x, ndigits=0)</code>
+                        </li>
+                        <li>
+                          <code>math.ceil(x)</code>: Rounds the value of x up to the nearest integer greater than or equal to x.
+                        </li>
+                        <li>
+                          <code>math.floor(x)</code>: Rounds the value of x down to the nearest integer less than or equal to x.
+                        </li>
+                        <li>
+                          <code>math.trunc(x)</code>: Truncates (cuts off) the decimal places from the value of x, returning the integer part without rounding.
+                        </li>
+                      </ol>
+                      
+                      
+
+
+
+                        
+   
+
+                    <h2>Conclusion</h2>
+                    <p>Rounding numbers is a common practice that simplifies numerical values, but traditional rounding methods can introduce bias towards higher values. Moreover, rounding numbers is a common task in many programming applications, and understanding the rounding methods available in Python can lead to more accurate and fair calculations. Python 3’s “round half to even” method, also known as banker’s rounding, offers a balanced distribution by rounding half the numbers up and half down. This approach minimizes bias and maintains statistical accuracy, especially when numbers fall exactly between two integers. By contrast, traditional rounding methods always round up, which can introduce a bias toward higher values. Banker’s rounding is particularly valuable in scenarios where precision and fairness are important, such as financial calculations, scientific experiments, or surveys. However, it’s essential to consider alternative rounding methods based on specific needs and contexts. The “round randomly” method offers a balanced distribution and statistical neutrality by rounding numbers randomly when they fall between two integers. While it mitigates bias, it introduces unpredictability and lacks determinism. The choice of rounding method should consider factors such as fairness, accuracy, the nature of the data being rounded, and industry standards or legal requirements.</p>
+
+
+
+
+                  <!-- END Text Here -->
+                        <div style="font-size: 1.5em; color: #999; letter-spacing: 0.3em; text-align: center;">&bull; &bull; &bull;</div> 
+                        </p>
+                        <p>👉👈  Follow me for more: <a href="https://medium.com/r/?url=https%3A%2F%2Ft.co%2FD0Ndbkjld9">Medium</a> | <a href="https://medium.com/r/?url=https%3A%2F%2Ftwitter.com%2FClemensJarnach">Twitter</a> | <a href="https://github.com/clemensjarnach">GitHub</a></p>
+
+                    </div>
+
+                      <!--    Call To Action -->  
+                    <div>
+                      <p style="text-align: justify;">📰 Subscribe for more posts like this:
+                        <a class="page-link" target="_blank" rel="noopener noreferrer" href="https://medium.com/@clemensjarnach">
+                          <strong>Medium | Clemens Jarnach ⚡️</strong>
+                        </a>
+                      </p>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            <!-- DON'T CHANGE CODE BELOW THIS LINE -->    
+            </article>
+            <div></div>
+        </div>
+
+    </div>
+    
+</body>
+
+<!-- content for "Scroll to Top Button"-->
+<div class="hover-text-container">
+  <button id="scroll-top-button">
+    <svg >
+      <img src="../11-resources/02-images/NASA-earth-view-2.png" alt="nasa-earth-button">
+    </svg>
+    <span class="hovertext">Scroll to Top</span>
+  </button>
+</div>  
+  
+
+  
+  <!-- Footer-->
+  <!-- <div class="nav-divider">  </div>  -->
+  <footer class="footer">
+      <p>Copyright ©2023 CJ </p>
+      <ul>
+          <ul>Email: <a href="mailto:clemens.jarnach@gtc.ox.ac.uk?subject=Hello&body=Hello,%0D%0A%0D%0ALet's connect! ">clemens.jarnach@gtc.ox.ac.uk</a></ul>
+          <ul>Address: 43 Woodstock Road, Oxford, OX2 6HG, UK</ul>
+          <ul>
+            <a class="icon" target="_blank" rel="noopener noreferrer" href="https://twitter.com/ClemensJarnach" title="twitter"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg> Twitter </a>
+            <a class="icon" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/clemensjarnach/" title="LinkedIn"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="LinkedIn" class="svg-inline--fa fa-linkedin fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 450"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg> LinkedIn</a>
+            <a class="icon" target="_blank" rel="noopener noreferrer" href="https://medium.com/@clemensjarnach" title="medium"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="medium" class="svg-inline--fa fa-medium fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 50 500 450"><path fill="currentColor" <path d="M129.151 156.751C104.604 165.248 84.7781 176.105 69.6723 189.323C54.5666 202.54 41.3491 220.478 30.0198 243.137C18.6906 265.795 12.5539 289.398 11.6098 313.945C10.6656 338.492 13.97 361.15 21.5229 381.921C29.0757 402.691 39.933 421.101 54.0946 437.151C68.2562 453.201 85.7222 466.418 106.493 476.803C127.263 487.188 149.449 493.325 173.052 495.213C196.655 497.102 218.841 494.741 239.612 488.133C260.382 481.524 280.208 470.195 299.09 454.145C317.973 438.095 332.606 419.213 342.991 397.498C353.377 375.784 359.041 352.653 359.985 328.106C360.929 303.56 357.625 280.901 350.072 260.131C342.519 239.36 331.662 220.95 317.5 204.9C303.339 188.851 285.873 175.633 265.103 165.248C244.332 154.863 222.618 148.726 199.959 146.838C177.301 144.95 153.698 148.254 129.151 156.751ZM435.042 165.248C421.824 173.745 410.967 185.546 402.47 200.652C393.973 215.758 387.364 232.752 382.644 251.634C377.923 270.516 375.563 293.647 375.563 321.026C375.563 348.405 377.923 371.535 382.644 390.417C387.364 409.3 393.973 426.294 402.47 441.399C410.967 456.505 420.408 467.834 430.793 475.387C441.179 482.94 451.564 487.188 461.949 488.133C472.334 489.077 481.303 487.661 488.856 483.884C496.409 480.108 503.49 474.915 510.098 468.306C516.707 461.698 523.316 452.257 529.925 439.983C536.533 427.71 542.198 413.076 546.919 396.082C551.639 379.088 554.471 358.318 555.415 333.771C556.36 309.224 555.415 288.454 552.583 271.46C549.751 254.466 543.614 235.584 534.173 214.814C524.732 194.043 515.291 179.41 505.85 170.913C496.409 162.416 485.552 157.223 473.278 155.335C461.005 153.447 448.259 156.751 435.042 165.248ZM587.987 176.577C584.211 181.298 579.962 193.099 575.242 211.981C570.521 230.863 567.689 262.963 566.745 308.28C565.801 353.597 567.689 389.001 572.409 414.492C577.13 439.983 581.851 456.033 586.571 462.642C591.292 469.25 595.068 472.555 597.9 472.555C600.733 472.555 604.509 469.25 609.23 462.642C613.95 456.033 618.199 444.704 621.975 428.654C625.751 412.604 628.112 380.504 629.056 332.355C630 284.205 628.112 248.329 623.391 224.727C618.671 201.124 613.95 186.018 609.23 179.41C604.509 172.801 600.733 169.496 597.9 169.496C595.068 169.496 591.764 171.857 587.987 176.577Z"></path></svg>  Medium</a>
+            <a class="icon" target="_blank" rel="noopener noreferrer" href="https://github.com/clemensjarnach" title="github"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 500"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> Github</a>
+  
+            <a class="icon" target="_blank" rel="noopener noreferrer" href="https://linktr.ee/clemensjarnach" title="linktree"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linktree" class="svg-inline--fa fa-linktree fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 230"><path fill="currentColor" d="M93.1968 3.48008C93.1563 23.3385 93.1963 43.1972 93.0753 63.0553C93.0722 63.5535 92.0952 63.2455 91.981 63.0553C90.7628 61.025 88.6412 59.7073 86.9962 57.8272C83.9392 54.3336 80.0188 50.6464 76.7833 47.0064C70.5546 39.9992 63.4497 34.0539 57.2086 27.1886C56.0816 25.9489 54.8159 24.7959 53.5611 23.5411C53.1135 23.0935 52.9168 22.3543 52.3453 22.0821C51.9062 21.873 51.3632 21.9868 50.8863 22.0821C50.0883 22.2417 49.586 23.6087 49.0626 24.0274C47.4203 25.3412 44.8568 29.1984 43.2266 29.7418C43.2266 30.4357 39.4224 33.9108 38.7281 34.6051C35.9665 37.3666 33.2865 40.2899 30.5821 42.9942C29.834 43.7423 28.2551 44.7302 27.7857 45.669C27.3926 46.4553 28.819 47.3098 29.0015 47.8575C29.7949 47.8575 31.2709 49.7622 32.0411 50.5323C33.1721 51.6634 35.2745 54.3934 36.5396 55.1524C37.4337 55.6889 38.8738 56.8054 39.2144 57.8272C40.2612 57.8272 41.9281 60.1762 42.6187 60.8668C44.8659 63.1139 47.1964 64.9581 49.4273 67.1891C50.6431 68.4049 52.531 69.2053 53.0748 70.8365C53.4455 70.8365 56.387 73.784 57.2086 74.6056C60.0198 77.4168 62.9571 80.111 65.7193 82.8731C66.5061 83.66 68.5092 84.799 68.8804 85.9127C69.7678 85.9127 70.593 87.3406 70.3394 88.1012C69.9882 87.9256 69.631 87.9796 69.2452 87.9796C49.4273 87.9796 29.6094 87.9796 9.79156 87.9796C9.73077 104.697 9.73077 104.697 9.66998 121.415C29.5689 121.455 49.4678 121.496 69.3668 121.536C69.8683 121.537 70.5652 121.397 70.9473 121.779C70.7009 122.272 70.9965 122.703 70.5826 123.117C69.8921 122.772 67.2366 126.209 66.5704 126.764C62.1481 130.449 58.2942 134.554 54.169 138.679C47.7442 145.104 41.21 151.152 34.7159 157.646C33.29 159.072 27.7082 163.392 27.9073 165.184C27.9528 165.594 31.7257 168.944 32.0411 169.196C35.6008 172.044 38.8792 176.035 42.1324 179.288C44.5248 181.68 46.9294 184.085 49.3057 186.461C49.7379 186.893 50.4029 188.07 51.0079 188.163C52.8173 188.442 54.5862 185.94 55.628 184.759C58.5616 181.434 61.968 178.297 65.1114 175.154C75.1336 165.132 85.1401 155.125 95.1422 145.123C97.9124 142.353 101.305 139.372 103.774 136.491C104.629 135.494 105.739 133.729 106.936 133.33C106.936 132.46 110.724 129.145 111.799 129.682C113.337 130.451 114.107 132.648 115.446 133.451C116.388 134.016 116.685 134.69 117.513 135.518C119.935 137.94 122.404 140.287 124.808 142.692C125.814 143.698 129.421 146.683 129.793 147.798C130.461 147.798 131.977 149.86 132.346 150.23C134.443 152.326 136.544 154.549 138.669 156.673C146.285 164.29 153.793 171.798 161.404 179.409C163.44 181.445 165.201 183.328 167.24 185.367C167.971 186.097 169.095 187.974 169.915 188.163C171.684 188.571 172.517 186.899 173.563 185.853C174.758 184.657 176.014 183.523 177.21 182.327C181.172 178.366 185.023 174.271 189.003 170.291C190.25 169.044 193.512 166.623 194.232 165.184C195.108 163.431 190.702 161.404 190.219 159.956C189.53 159.956 188.47 158.297 187.909 157.889C187.223 157.39 182.41 152.82 182.195 152.175C181.965 152.175 177.428 147.529 176.967 147.068C172.073 142.174 167.137 137.23 161.891 132.6C159.332 130.342 157.137 127.645 154.717 125.427C154.1 124.861 151.944 123.644 151.799 122.63C151.646 121.557 152.301 121.779 153.137 121.779C172.468 121.779 191.8 121.779 211.131 121.779C211.588 121.779 211.997 121.779 212.469 121.779C212.469 104.576 212.469 104.576 212.469 87.3717C211.806 87.239 211.506 87.2501 210.888 87.2501C191.84 87.2501 172.793 87.0882 153.745 87.1285C153.63 87.1288 153.583 87.2906 153.502 87.3717C153.167 87.2046 152.583 87.223 152.286 87.3717C151.665 86.7513 153.552 85.158 154.231 84.8185C155.056 84.4059 155.398 83.6515 156.055 82.9947C157.998 81.052 160.079 79.4567 162.012 77.5235C164.974 74.5622 168.363 71.6596 171.374 68.648C172.223 67.799 173.423 66.2863 174.535 65.7301C175.919 65.0382 176.931 62.8201 178.304 61.8395C179.797 60.7734 184.937 56.355 185.721 54.7877C186.143 53.943 187.494 53.3794 188.152 52.7208C188.961 51.9121 193.147 48.3157 193.502 47.2496C193.624 47.3104 193.624 47.3104 193.745 47.3712C193.973 47.1433 194.659 46.0371 194.475 45.7906C192.827 43.594 190.627 41.9772 188.76 39.9547C186.536 37.5455 184.151 35.2238 181.83 32.9029C180.942 32.0145 178.603 30.2728 178.183 29.0123C177.592 29.0123 176.233 27.1803 175.994 26.7022C175.702 26.1169 174.822 25.9766 174.414 25.4864C173.322 24.1761 172.014 21.9525 170.037 22.4469C168.645 22.7947 167.89 24.3508 166.876 25.3648C164.727 27.5132 162.781 29.7026 160.675 31.8087C155.884 36.5995 151.052 41.5529 146.207 46.3985C144.243 48.3621 140.957 52.9749 138.79 54.0582C138.009 54.4489 137.582 55.5094 136.966 56.1251C135.645 57.4461 132.597 61.2694 131.252 61.7179C131.252 62.2839 130.753 62.5325 130.279 62.6905C130.279 63.3349 129.08 63.5556 128.942 62.9337C128.862 62.5754 129.064 62.2064 129.064 61.8395C129.064 42.4268 128.982 23.0143 128.942 3.60166C111.069 3.54087 111.069 3.54087 93.1968 3.48008Z M92.4673 252.115C110.461 252.176 110.461 252.176 128.456 252.237C128.496 225.408 128.577 198.579 128.577 171.75C128.577 171.551 128.143 171.194 128.091 171.142C127.662 171.356 127.515 171.143 127.118 171.142C116.5 171.101 105.882 171.142 95.2637 171.142C94.7159 171.142 92.7122 170.945 92.7105 171.506C92.6297 198.295 92.7913 225.084 92.7105 251.872C92.7102 251.987 92.5484 252.034 92.4673 252.115Z M9.79156 121.293C9.73077 121.779 9.73077 121.779 9.66998 122.266C9.79156 122.306 9.90657 122.387 10.0347 122.387C29.7309 122.468 49.4273 122.509 69.1236 122.509C70.3959 122.509 70.8624 124.5 71.0689 122.023C71.0796 121.895 71.231 121.779 71.1905 121.658C71.1361 121.495 70.9473 121.415 70.8257 121.293C70.4747 121.469 69.8567 121.415 69.4883 121.415C49.5894 121.415 29.6905 121.334 9.79156 121.293Z M9.79156 87.2501C9.73077 87.6756 9.73077 87.6756 9.66998 88.1012C29.5284 88.1417 49.3868 88.1824 69.2452 88.2228C69.6313 88.2235 69.9878 88.1685 70.3394 88.3443C70.5826 88.1012 70.5826 88.1012 70.8257 87.858C70.5898 87.3862 70.7793 86.8013 70.2178 86.5206C69.7783 86.3008 69.3966 87.2501 68.8804 87.2501C49.7515 87.2501 30.6227 87.3717 11.4937 87.3717C10.9898 87.3717 10.3261 87.3169 9.79156 87.2501Z"
+               ></path></svg> Linktree</a>
+  
+          </ul>
+      </ul>
+  </footer>
+  
+</html>
