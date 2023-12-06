@@ -4,27 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scrabble Score Calculator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
+
+    <link rel="stylesheet" type="text/css" href="./11-resources/01-css/TK-style.css">  <!-- link to CSS stylesheet-->
+    <script src="./11-resources/04-js/scroll-button.js"></script>
+    <link rel="icon" href="./favicon.ico">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YNV3HTCQNL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YNV3HTCQNL');
+    </script>
+    <style>  /* CSS for the Pong website */
+      .content-container-pong {
+        max-width: 500px;
+        min-width: 100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        text-align: justify;
         }
-        label {
-            display: block;
-            margin-top: 10px;
+
+      @media only screen and (max-width: 1000px){       /* change width etc for desktop view */
+      .content-container-pong {
+        max-width: 500px;
+        margin-top: 30px;
+        margin-left: 1vw;  /* create a margin on the left side of your website */
+        margin: 0 auto;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        text-align: justify;
         }
-        .history-window {
-            text-align: left;
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            max-height: 150px;
-            overflow-y: auto;
-        }
+      }
     </style>
+
 </head>
 <body>
+
+        <!-- Code for Navigation Bar-->
+        <nav class="nav_menu">
+            <div class="nav_header">
+              <a href="index.html">
+                <!-- <img id="oxford-logo" src="./11-resources/02-images/wappen.png" alt="oxford-logo" width="50px"> -->
+                <img id="oxford-logo" src="./11-resources/02-images/oxford-logo-grey.png" alt="oxford-logo" width="50px">
+              </a>
+            </div>
+            <div class="nav_menu_pages">
+              <a href="index.html" class="nav_link ">home</a>
+              <a href="about.html" class="nav_link ">about</a>
+              <a href="cv.html" class="nav_link ">cv</a>
+              <a href="writings.html" class="nav_link">writings</a>
+              <a href="projects.html"  class="nav_link">projects</a>
+              <a href="teaching.html" class="nav_link active">teaching</a>
+              <a href="pong.html" class="nav_link">pong</a>
+            </div>
+          </nav>
+      
+      
+      
+       <!-- Content for Homepage Title & Intro  -->
+       <div class="title-container">
+          <a href="index.html">
+            <h1 id="clemens-jarnach">← clemens jarnach</h1>
+          </a>
+        </div>
+
     <h1>Scrabble Score Calculator</h1>
     <form id="scrabbleForm">
         <label for="player1" style="font-weight: bold;">Player 1:</label>
