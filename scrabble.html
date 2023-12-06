@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrabble Score Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        .history-window {
+            text-align: left;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scrabble Score Calculator</h1>
+    <form id="scrabbleForm">
+        <label for="player1">Player 1:</label>
+        <input type="text" id="player1" placeholder="Enter word">
+        <label for="adjustment1">Manual Adjustment:</label>
+        <input type="number" id="adjustment1" placeholder="Enter adjustment" step="1">
+
+        <label for="player2">Player 2:</label>
+        <input type="text" id="player2" placeholder="Enter word">
+        <label for="adjustment2">Manual Adjustment:</label>
+        <input type="number" id="adjustment2" placeholder="Enter adjustment" step="1">
+
+        <button type="button" onclick="calculateScore()">Calculate Score</button>
+        <button type="button" onclick="resetForm()">Reset</button>
+        <button type="button" onclick="downloadHistory()">Download History</button>
+    </form>
+
+    <h2>Results</h2>
+    <p id="result"></p>
+
+    <div class="history-window" id="historyPlayer1">
+        <h3>Player 1 History</h3>
+        <ul id="historyListPlayer1"></ul>
+    </div>
+
+    <div class="history-window" id="historyPlayer2">
+        <h3>Player 2 History</h3>
+        <ul id="historyListPlayer2"></ul>
+    </div>
+
+    <script>
+        var historyPlayer1 = [];  // Array to store Player 1 history
+        var historyPlayer2 = [];  // Array to store Player 2 history
+
+        function calculateScore() {
+            var player1Input = document.getElementById('player1').value.toUpperCase();
+            var player2Input = document.getElementById('player2').value.toUpperCase();
+            var adjustment1 = parseInt(document.getElementById('adjustment1').value) || 0;
+            var adjustment2 = parseInt(document.getElementById('adjustment2').value) || 0;
+
+            var player1Score = calculateWordScore(player1Input);
+            var player2Score = calculateWordScore(player2Input);
+
+            var player1TotalScore = player1Score + (window.player1TotalScore || 0) + adjustment1;
+            var player2TotalScore = player2Score + (window.player2TotalScore || 0) + adjustment2;
+
+            window.player1TotalScore = player1TotalScore;
+            window.player2TotalScore = player2TotalScore;
+
+            // Update history
+            var historyEntryPlayer1 = `Player 1: ${player1Input} (${player1Score}) + ${adjustment1} = ${player1TotalScore}`;
+            var historyEntryPlayer2 = `Player 2: ${player2Input} (${player2Score}) + ${adjustment2} = ${player2TotalScore}`;
+
+            historyPlayer1.push(historyEntryPlayer1);
+            historyPlayer2.push(historyEntryPlayer2);
+
+            var resultText = 'Player 1 Word Score: ' + player1Score + '<br>' +
+                             'Player 2 Word Score: ' + player2Score + '<br><br>' +
+                             'Player 1 Total Score: ' + player1TotalScore + '<br>' +
+                             'Player 2 Total Score: ' + player2TotalScore;
+
+            document.getElementById('result').innerHTML = resultText;
+
+            // Update history display
+            updateHistoryDisplay('historyListPlayer1', historyPlayer1);
+            updateHistoryDisplay('historyListPlayer2', historyPlayer2);
+
+            // Reset input fields
+            document.getElementById('player1').value = '';
+            document.getElementById('adjustment1').value = '';
+            document.getElementById('player2').value = '';
+            document.getElementById('adjustment2').value = '';
+        }
+
+        function calculateWordScore(word) {
+            var score = 0;
+
+            // Scrabble letter values
+            var letterValues = {
+                'A': 1, 'B': 3, 'C': 3, 'D': 2,
+                'E': 1, 'F': 4, 'G': 2, 'H': 4,
+                'I': 1, 'J': 8, 'K': 5, 'L': 1,
+                'M': 3, 'N': 1, 'O': 1, 'P': 3,
+                'Q': 10, 'R': 1, 'S': 1, 'T': 1,
+                'U': 1, 'V': 4, 'W': 4, 'X': 8,
+                'Y': 4, 'Z': 10
+            };
+
+            for (var i = 0; i < word.length; i++) {
+                var letter = word[i];
+                if (letter in letterValues) {
+                    score += letterValues[letter];
+                }
+            }
+
+            return score;
+        }
+
+        function resetForm() {
+            document.getElementById('player1').value = '';
+            document.getElementById('adjustment1').value = '';
+            document.getElementById('player2').value = '';
+            document.getElementById('adjustment2').value = '';
+            document.getElementById('result').innerHTML = '';
+
+            window.player1TotalScore = 0;
+            window.player2TotalScore = 0;
+            historyPlayer1 = [];  // Reset Player 1 history
+            historyPlayer2 = [];  // Reset Player 2 history
+
+            // Reset history display
+            updateHistoryDisplay('historyListPlayer1', historyPlayer1);
+            updateHistoryDisplay('historyListPlayer2', historyPlayer2);
+        }
+
+        function updateHistoryDisplay(historyListId, historyArray) {
+            var historyList = document.getElementById(historyListId);
+            historyList.innerHTML = '';
+
+            for (var i = 0; i < historyArray.length; i++) {
+                var listItem = document.createElement('li');
+                listItem.innerHTML = historyArray[i];
+                historyList.appendChild(listItem);
+            }
+        }
+
+        function downloadHistory() {
+            var combinedHistory = 'Player 1 History:\n' + historyPlayer1.join('\n') + '\n\n' +
+                                  'Player 2 History:\n' + historyPlayer2.join('\n');
+
+            var blob = new Blob([combinedHistory], { type: 'text/plain' });
+            var link = document.createElement('a');
+            link.download = 'scrabble_history.txt';
+            link.href = window.URL.createObjectURL(blob);
+            link.click();
+        }
+    </script>
+</body>
+</html>
