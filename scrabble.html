@@ -27,17 +27,21 @@
 <body>
     <h1>Scrabble Score Calculator</h1>
     <form id="scrabbleForm">
-        <label for="player1">Player 1:</label>
+        <label for="player1" style="font-weight: bold;">Player 1:</label>
         <input type="text" id="player1" placeholder="Enter word">
         <label for="adjustment1">Manual Adjustment:</label>
         <input type="number" id="adjustment1" placeholder="Enter adjustment" step="1">
-
-        <label for="player2">Player 2:</label>
+        <p style="margin-bottom:1cm;"> </p> <!-- This is a cheap hack to create space between the two players -->
+       
+        <label for="player2" style="font-weight: bold;">Player 2:</label>
         <input type="text" id="player2" placeholder="Enter word">
         <label for="adjustment2">Manual Adjustment:</label>
         <input type="number" id="adjustment2" placeholder="Enter adjustment" step="1">
+        <p style="margin-bottom:0.8cm;"> </p> <!-- This is a cheap hack to create space between the two players -->
 
-        <button type="button" onclick="calculateScore()">Calculate Score</button>
+        <button type="button" onclick="calculateScore()" style="font-size: 14px; padding: 10px;">Calculate Score</button>
+        <p style="margin-bottom:0.8cm;"> </p> 
+       
         <button type="button" onclick="resetForm()">Reset</button>
         <button type="button" onclick="downloadHistory()">Download History</button>
     </form>
